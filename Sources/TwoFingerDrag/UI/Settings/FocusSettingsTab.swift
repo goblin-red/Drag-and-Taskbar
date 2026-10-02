@@ -10,7 +10,7 @@ struct FocusSettingsTab: View {
         Form {
             Section(tr("Window focus", "Фокус окна")) {
                 Toggle(tr("Activate the window when controlling it", "Активировать окно при управлении"), isOn: $activateOnControl)
-                SettingsHelpText(tr("When on, the window under the cursor becomes active when you drag, resize, minimize, close or maximize it with GOBL(in) Drag.", "Если включено, окно под курсором становится активным при перетаскивании, изменении размера, сворачивании, закрытии или разворачивании через GOBL(in) Drag."))
+                SettingsHelpText(tr("When on, the window under the cursor becomes active when you drag, resize, minimize, close or maximize it with GOBL(in) Drag & Taskbar.", "Если включено, окно под курсором становится активным при перетаскивании, изменении размера, сворачивании, закрытии или разворачивании через GOBL(in) Drag & Taskbar."))
                 Toggle(tr("Activate on key press", "Активировать по нажатию"), isOn: $activateOnModifierPress)
                 Toggle(tr("Activate on cursor movement", "Активировать при движении курсора"), isOn: $activateOnModifierHover)
                 if activateOnModifierPress || activateOnModifierHover {

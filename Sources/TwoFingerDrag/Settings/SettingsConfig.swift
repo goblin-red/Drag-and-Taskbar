@@ -21,11 +21,11 @@ private struct SettingsConfigEntry {
 final class SettingsConfig {
     static let shared = SettingsConfig()
 
-    /// Папка проекта: та, в которой лежит сам GOBL(in) Drag.app.
+    /// Папка проекта: та, в которой лежит сам GOBL(in) Drag & Taskbar.app.
     /// Путь не захардкожен — проект работает из любой директории.
     static let projectDirectory: URL = {
         let bundleURL = Bundle.main.bundleURL
-        // Собранное приложение: .../<папка проекта>/GOBL(in) Drag.app
+        // Собранное приложение: .../<папка проекта>/GOBL(in) Drag & Taskbar.app
         if bundleURL.pathExtension == "app" {
             return bundleURL.deletingLastPathComponent()
         }
@@ -92,8 +92,8 @@ final class SettingsConfig {
               comment: "A swipe down takes the window out of native full screen if it is there (the AXFullScreen attribute).",
               commentRu: "Свайп вниз выводит окно из нативного полноэкранного режима, если оно там сейчас (атрибут AXFullScreen)."),
         .init(key: SettingsKey.activateOnControl, defaultValue: "true", kind: .bool,
-              comment: "Activate the window when GOBL(in) Drag starts controlling it.",
-              commentRu: "Активировать окно, когда GOBL(in) Drag начинает им управлять."),
+              comment: "Activate the window when GOBL(in) Drag & Taskbar starts controlling it.",
+              commentRu: "Активировать окно, когда GOBL(in) Drag & Taskbar начинает им управлять."),
         .init(key: SettingsKey.activateOnModifierPress, defaultValue: "true", kind: .bool,
               comment: "Activate the window under the cursor on a plain press of the chosen modifier.",
               commentRu: "Активировать окно под курсором при простом нажатии выбранного модификатора."),
@@ -248,7 +248,7 @@ final class SettingsConfig {
 
     private func render(defaults: UserDefaults) -> String {
         var lines: [String] = [
-            "# GOBL(in) Drag configuration",
+            "# GOBL(in) Drag & Taskbar configuration",
             tr("# This file can be edited in a text editor.", "# Файл можно редактировать в текстовом редакторе."),
             tr("# Settings are read when the app starts.", "# Настройки считываются при запуске приложения."),
             tr("# Boolean: true/false. Write strings without quotes.", "# Boolean: true/false. Строки писать без кавычек."),
@@ -266,7 +266,7 @@ final class SettingsConfig {
 
     private func renderDefaultConfig() -> String {
         var lines: [String] = [
-            "# GOBL(in) Drag default configuration backup",
+            "# GOBL(in) Drag & Taskbar default configuration backup",
             tr("# Factory values of the settings. This file is a backup of the defaults.",
                "# Заводские значения настроек. Этот файл нужен как резервная копия дефолтов."),
             tr("# Boolean: true/false. Write strings without quotes.", "# Boolean: true/false. Строки писать без кавычек."),

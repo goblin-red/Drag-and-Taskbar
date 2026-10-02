@@ -3,7 +3,7 @@
 set -euo pipefail
 
 cd "$(dirname "$0")"
-NAME="GOBL(in) Drag"
+NAME="GOBL(in) Drag & Taskbar"
 STAGE="dist/stage/${NAME}"
 ZIP="dist/goblin-drag-macos.zip"
 

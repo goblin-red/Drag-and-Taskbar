@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # =============================================================================
-#  GOBL(in) Drag — сборка .app
+#  GOBL(in) Drag & Taskbar — сборка .app
 #
 #  Режимы (аргумент №1):
 #     ./build.sh              arm64+x86_64 — оба среза в одном бинарнике (lipo), ДЕФОЛТ
@@ -12,10 +12,10 @@ set -euo pipefail
 # =============================================================================
 
 # APP_NAME — имя для пользователя (как на сайте goblin.red), EXEC_NAME — внутреннее имя бинарника.
-APP_NAME="GOBL(in) Drag"
+APP_NAME="GOBL(in) Drag & Taskbar"
 EXEC_NAME="TwoFingerDrag"
 BUNDLE_ID="com.local.twofingerdrag"
-VERSION="1.0"
+VERSION="1.1"
 MIN_MACOS="13.0"
 
 cd "$(dirname "$0")"
@@ -131,15 +131,18 @@ fi
 
 # --- Info.plist --------------------------------------------------------------
 
+# В XML амперсанд из имени приложения записывается как &amp;
+APP_NAME_XML="$(printf '%s' "${APP_NAME}" | sed 's/&/\&amp;/g')"
+
 cat > "${APP_DIR}/Contents/Info.plist" <<PLIST
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
     <key>CFBundleName</key>
-    <string>${APP_NAME}</string>
+    <string>${APP_NAME_XML}</string>
     <key>CFBundleDisplayName</key>
-    <string>${APP_NAME}</string>
+    <string>${APP_NAME_XML}</string>
     <key>CFBundleIconFile</key>
     <string>AppIcon</string>
     <key>CFBundleIdentifier</key>

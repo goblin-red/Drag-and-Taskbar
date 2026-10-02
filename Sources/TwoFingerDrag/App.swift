@@ -43,7 +43,7 @@ struct TwoFingerDragApp: App {
         }
         .menuBarExtraStyle(.window)
 
-        Window("GOBL(in) Drag", id: "settings") {
+        Window("GOBL(in) Drag & Taskbar", id: "settings") {
             SettingsView()
         }
         .windowResizability(.contentSize)

@@ -1,5 +1,5 @@
 # собранное приложение и временные файлы сборки
-GOBL(in) Drag.app/
+GOBL(in) Drag & Taskbar.app/
 .build/
 
 # личные настройки — создаются из default-config.txt при первом запуске

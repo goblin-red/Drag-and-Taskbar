@@ -154,7 +154,7 @@ struct SettingsView: View {
         .id(languageRaw)
         .frame(width: SettingsLayout.windowWidth, height: SettingsLayout.windowHeight)
         .padding(.top, 6)
-        .navigationTitle(tr("Settings — GOBL(in) Drag", "Настройки — GOBL(in) Drag"))
+        .navigationTitle(tr("Settings — GOBL(in) Drag & Taskbar", "Настройки — GOBL(in) Drag & Taskbar"))
     }
 
     private func resetDefaults() {

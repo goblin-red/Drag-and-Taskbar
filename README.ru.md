@@ -1,10 +1,11 @@
-# GOBL(in) Drag для macOS
+# GOBL(in) Drag & Taskbar для macOS
 
 [English](README.md) · **Русский**
 
 Двигайте, сворачивайте и переключайте окна жестами трекпада. Зажмите клавишу-модификатор — и окно под
 курсором поедет за пальцем, за какое бы место вы его ни «взяли». Целиться в заголовок больше не нужно.
-Одно из дополнительных приложений [GOBL(in)](https://goblin.red). Прототип для Windows
+На сайте [GOBL(in)](https://goblin.red) это два пункта, Drag и Taskbar; приложение одно.
+Прототип для Windows
 в работе и пока не опубликован.
 
 - **Перетаскивание без заголовка** — три режима: окно едет за курсором, пока зажат модификатор; за жестом
@@ -31,7 +32,7 @@ curl -fsSL https://raw.githubusercontent.com/goblin-red/two-finger-drag-macos/ma
 ```
 
 Скрипт скачивает готовую сборку из [Releases](https://github.com/goblin-red/two-finger-drag-macos/releases/latest),
-кладёт её в `/Applications/GOBL(in) Drag` и открывает. Сборка универсальная: работает и на Apple Silicon, и на Mac с Intel,
+кладёт её в `/Applications/GOBL(in) Drag & Taskbar` и открывает. Сборка универсальная: работает и на Apple Silicon, и на Mac с Intel,
 инструменты Xcode не нужны. Затем один раз выдайте разрешение, см. [Разрешение](#разрешение). Ваш `config.txt` при обновлении
 сохраняется. Чтобы обновиться, выполните ту же команду ещё раз.
 
@@ -39,7 +40,7 @@ curl -fsSL https://raw.githubusercontent.com/goblin-red/two-finger-drag-macos/ma
 Разблокируйте её один раз:
 
 ```sh
-xattr -dr com.apple.quarantine "/путь/к/GOBL(in) Drag"
+xattr -dr com.apple.quarantine "/путь/к/GOBL(in) Drag & Taskbar"
 ```
 
 ## Сборка из исходников
@@ -50,7 +51,7 @@ cd two-finger-drag-macos
 
 ./create-cert.sh        # один раз: локальный сертификат подписи, чтобы разрешение не слетало
 ./build.sh              # универсальная сборка: Apple Silicon + Intel (по умолчанию)
-open "GOBL(in) Drag.app"
+open "GOBL(in) Drag & Taskbar.app"
 ```
 
 Режимы сборки:
@@ -64,7 +65,7 @@ open "GOBL(in) Drag.app"
 ## Разрешение
 
 Приложению нужен **Универсальный доступ**: *Системные настройки → Конфиденциальность и безопасность →
-Универсальный доступ* → включите `GOBL(in) Drag`. Без него macOS не даёт видеть жесты и двигать окна.
+Универсальный доступ* → включите `GOBL(in) Drag & Taskbar`. Без него macOS не даёт видеть жесты и двигать окна.
 С сертификатом из `create-cert.sh` разрешение сохраняется между пересборками.
 
 ## Как пользоваться (модификатор по умолчанию — ⌥ Option)

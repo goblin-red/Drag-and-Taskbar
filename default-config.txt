@@ -1,4 +1,4 @@
-# GOBL(in) Drag default configuration backup
+# GOBL(in) Drag & Taskbar default configuration backup
 # Factory values of the settings. This file is a backup of the defaults.
 # Boolean: true/false. Write strings without quotes.
 
@@ -47,7 +47,7 @@ zoom = false
 # A swipe down takes the window out of native full screen if it is there (the AXFullScreen attribute).
 exitFullscreenOnSwipeDown = true
 
-# Activate the window when GOBL(in) Drag starts controlling it.
+# Activate the window when GOBL(in) Drag & Taskbar starts controlling it.
 activateOnControl = true
 
 # Activate the window under the cursor on a plain press of the chosen modifier.

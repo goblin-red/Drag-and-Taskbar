@@ -10,7 +10,7 @@ struct MenuView: View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
                 BrandLogo().frame(height: 22)
-                Text("GOBL(in) Drag").font(.headline)
+                Text("GOBL(in) Drag & Taskbar").font(.headline)
                 Spacer()
             }
 

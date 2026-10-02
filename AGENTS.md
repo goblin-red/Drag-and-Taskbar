@@ -1,4 +1,4 @@
-# GOBL(in) Drag — единый документ (пользователь + агент)
+# GOBL(in) Drag & Taskbar — единый документ (пользователь + агент)
 
 Это **единственный** канонический документ проекта (README и onboarding-инструкция
 объединены). Раздел 2 — для пользователя. Разделы 3+ — для агента, который дорабатывает
@@ -12,8 +12,10 @@
 Утилита для macOS: **перетаскивание и управление окнами жестами трекпада**, живёт
 иконкой в строке меню (трее), без иконки в Dock (приложение-агент, `LSUIElement`).
 
-**Имя.** Для пользователя приложение называется **GOBL(in) Drag** — так оно названо на сайте
-goblin.red; это имя носят `.app`, меню в трее и окно настроек (`APP_NAME` в `build.sh`).
+**Имя.** Для пользователя приложение называется **GOBL(in) Drag & Taskbar**: на сайте goblin.red это
+два пункта, Drag (жесты окон) и Taskbar (переключатель modifier+Tab), а приложение одно. Имя носят
+`.app`, меню в трее и окно настроек (`APP_NAME` в `build.sh`). 🟠 В имени есть `&`: в `Info.plist`
+он записывается как `&amp;` (`APP_NAME_XML`), пути в командах берутся в кавычки.
 Внутреннее имя **TwoFingerDrag** осталось у исполняемого файла (`EXEC_NAME`), папки исходников,
 bundle id `com.local.twofingerdrag` и сертификата подписи. 🔴 Bundle id и сертификат не
 переименовывать — иначе слетит выданное разрешение Accessibility (см. §7).
@@ -57,8 +59,8 @@ bundle id `com.local.twofingerdrag` и сертификата подписи. �
 ### Сборка и запуск
 ```bash
 ./create-cert.sh     # один раз: создаёт сертификат для подписи (см. §7)
-./build.sh           # собирает «GOBL(in) Drag.app»: arm64 + x86_64 (по умолчанию)
-open "GOBL(in) Drag.app"
+./build.sh           # собирает «GOBL(in) Drag & Taskbar.app»: arm64 + x86_64 (по умолчанию)
+open "GOBL(in) Drag & Taskbar.app"
 ```
 
 ### Варианты сборки (три режима)
@@ -73,13 +75,13 @@ open "GOBL(in) Drag.app"
 
 `./build.sh --help` печатает эту же шпаргалку. Неизвестный режим — ошибка и выход с кодом 1.
 
-Проверить, что получилось: `lipo -archs "GOBL(in) Drag.app/Contents/MacOS/TwoFingerDrag"`
+Проверить, что получилось: `lipo -archs "GOBL(in) Drag & Taskbar.app/Contents/MacOS/TwoFingerDrag"`
 (скрипт печатает это сам в конце). Текущая архитектура сборки также видна в меню трея
 строкой «Архитектура» — её кладёт в `BuildInfo.arch` сам `build.sh`.
 
 ### Выдать разрешение (один раз)
 Приложению нужен **Универсальный доступ**: *Системные настройки → Конфиденциальность
-и безопасность → Универсальный доступ* → включить `GOBL(in) Drag`. Без него перехват
+и безопасность → Универсальный доступ* → включить `GOBL(in) Drag & Taskbar`. Без него перехват
 жестов и перемещение окон не работают (это защита системы, обойти нельзя).
 Благодаря стабильной подписи разрешение **сохраняется между пересборками**.
 
@@ -143,7 +145,7 @@ open "GOBL(in) Drag.app"
 ├── config.txt                 # пользовательский текстовый конфиг
 ├── default-config.txt         # резервная копия заводских значений (пишется автоматически)
 ├── logo.svg, AppIcon.icns     # логотип Goblin для меню и иконка приложения
-├── GOBL(in) Drag.app          # собранный бандл (артефакт)
+├── GOBL(in) Drag & Taskbar.app          # собранный бандл (артефакт)
 └── Sources/TwoFingerDrag/
     ├── App.swift              # точка входа: AppDelegate + сцены
     ├── BuildInfo.swift        # ГЕНЕРИРУЕТСЯ build.sh (дата сборки) — не редактировать, в git не хранится
@@ -157,7 +159,7 @@ open "GOBL(in) Drag.app"
 
 Компиляция в `build.sh` рекурсивно подхватывает все `*.swift` внутри
 `Sources/TwoFingerDrag`, поэтому новые файлы в подпапках собираются автоматически.
-Пользовательский текстовый конфиг `config.txt` лежит **рядом с `GOBL(in) Drag.app`**,
+Пользовательский текстовый конфиг `config.txt` лежит **рядом с `GOBL(in) Drag & Taskbar.app`**,
 то есть в папке проекта; путь вычисляется от `Bundle.main` (`SettingsConfig.projectDirectory`).
 
 ### Модульная ownership-структура
@@ -207,7 +209,7 @@ open "GOBL(in) Drag.app"
 Все настройки приложения должны быть представлены в текстовом конфиге `config.txt`.
 
 🔴 **Путь к конфигу не хардкодить.** `SettingsConfig.projectDirectory` вычисляет папку от
-`Bundle.main.bundleURL`: конфиг всегда лежит рядом с `GOBL(in) Drag.app`. Если приложение
+`Bundle.main.bundleURL`: конфиг всегда лежит рядом с `GOBL(in) Drag & Taskbar.app`. Если приложение
 запущено не как бандл, берётся папка исполняемого файла. Благодаря этому проект можно
 переносить и переименовывать — ничего править не нужно.
 
@@ -258,8 +260,8 @@ open "GOBL(in) Drag.app"
 ./build.sh                                            # собрать оба среза (universal, дефолт)
 ./build.sh arm                                        # собрать только под Apple Silicon (arm64)
 ./build.sh intel                                      # собрать только под Intel (x86_64)
-killall TwoFingerDrag 2>/dev/null; sleep 0.5; open "GOBL(in) Drag.app"   # перезапустить
-lipo -archs "GOBL(in) Drag.app/Contents/MacOS/TwoFingerDrag"           # какие архитектуры внутри
+killall TwoFingerDrag 2>/dev/null; sleep 0.5; open "GOBL(in) Drag & Taskbar.app"   # перезапустить
+lipo -archs "GOBL(in) Drag & Taskbar.app/Contents/MacOS/TwoFingerDrag"           # какие архитектуры внутри
 pgrep -lf "Contents/MacOS/TwoFingerDrag"             # проверить процесс
 
 # Диагностика ЗАВИСАНИЯ (deadlock):

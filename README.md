@@ -1,10 +1,11 @@
-# GOBL(in) Drag for macOS
+# GOBL(in) Drag & Taskbar for macOS
 
 **English** · [Русский](README.ru.md)
 
 Move, minimize and switch windows with trackpad gestures. Hold a modifier key and the window under
 the cursor follows your finger, wherever you "grab" it. No more aiming for the title bar.
-One of the extra apps of [GOBL(in)](https://goblin.red). A Windows prototype is
+On the [GOBL(in)](https://goblin.red) website it is listed as two items, Drag and Taskbar; it is one app.
+A Windows prototype is
 in the works and is not published yet.
 
 - **Drag without the title bar**: three modes. The window follows the cursor while the modifier is held,
@@ -31,14 +32,14 @@ curl -fsSL https://raw.githubusercontent.com/goblin-red/two-finger-drag-macos/ma
 ```
 
 The script downloads the ready-made build from [Releases](https://github.com/goblin-red/two-finger-drag-macos/releases/latest),
-puts it into `/Applications/GOBL(in) Drag` and opens it. The build is universal: it runs on Apple Silicon and on Intel Macs,
+puts it into `/Applications/GOBL(in) Drag & Taskbar` and opens it. The build is universal: it runs on Apple Silicon and on Intel Macs,
 and no Xcode tools are needed. Then allow the app once, see [Permission](#permission). Your `config.txt` is kept between updates. To update, run the same command again.
 
 Downloaded the zip by hand? The app is not notarized by Apple, so macOS blocks a downloaded copy.
 Unblock it once:
 
 ```sh
-xattr -dr com.apple.quarantine "/path/to/GOBL(in) Drag"
+xattr -dr com.apple.quarantine "/path/to/GOBL(in) Drag & Taskbar"
 ```
 
 ## Build from source
@@ -49,7 +50,7 @@ cd two-finger-drag-macos
 
 ./create-cert.sh        # once: a local signing certificate, so the permission survives rebuilds
 ./build.sh              # universal: Apple Silicon + Intel (default)
-open "GOBL(in) Drag.app"
+open "GOBL(in) Drag & Taskbar.app"
 ```
 
 Build modes:
@@ -63,7 +64,7 @@ Build modes:
 ## Permission
 
 The app needs **Accessibility** access: *System Settings → Privacy & Security → Accessibility* →
-turn on `GOBL(in) Drag`. Without it macOS doesn't let the app see gestures or move windows.
+turn on `GOBL(in) Drag & Taskbar`. Without it macOS doesn't let the app see gestures or move windows.
 With the certificate from `create-cert.sh` the permission is kept between rebuilds.
 
 ## How to use (default modifier: ⌥ Option)

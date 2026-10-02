@@ -1,12 +1,12 @@
 #!/bin/bash
-# Установка GOBL(in) Drag: скачивает готовую сборку из GitHub Releases.
+# Установка GOBL(in) Drag & Taskbar: скачивает готовую сборку из GitHub Releases.
 #   curl -fsSL https://raw.githubusercontent.com/goblin-red/two-finger-drag-macos/main/install.sh | bash
 # Свой путь установки: GOBLIN_INSTALL_DIR=~/Apps; не открывать после установки: bash -s -- --no-open
 set -euo pipefail
 
 REPO="goblin-red/two-finger-drag-macos"
 ASSET="goblin-drag-macos.zip"
-NAME="GOBL(in) Drag"
+NAME="GOBL(in) Drag & Taskbar"
 URL="https://github.com/${REPO}/releases/latest/download/${ASSET}"
 
 # Куда ставить: /Applications, а если туда нельзя писать — ~/Applications
@@ -28,6 +28,14 @@ ditto -x -k "${TMP}/app.zip" "${TMP}/unpacked"
 
 # Закрываем работающую копию и заменяем приложение, настройки не трогаем
 killall TwoFingerDrag 2>/dev/null || true
+
+# До v1.1 приложение называлось GOBL(in) Drag: переносим его папку вместе с настройками
+OLD_DEST="${DEST_ROOT}/GOBL(in) Drag"
+if [ -d "${OLD_DEST}" ] && [ ! -e "${DEST}" ]; then
+    mv "${OLD_DEST}" "${DEST}"
+    rm -rf "${DEST}/GOBL(in) Drag.app"
+fi
+
 mkdir -p "${DEST}"
 rm -rf "${DEST}/${NAME}.app"
 ditto "${TMP}/unpacked/${NAME}/${NAME}.app" "${DEST}/${NAME}.app"
