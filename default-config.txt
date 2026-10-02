@@ -1,0 +1,96 @@
+# GOBL(in) Drag default configuration backup
+# Factory values of the settings. This file is a backup of the defaults.
+# Boolean: true/false. Write strings without quotes.
+
+# Master switch of the app.
+enabled = true
+
+# Open the app at macOS login.
+launchAtLogin = true
+
+# Drag modifier: command, option or control.
+modifier = option
+
+# Drag mode: 1 - the window follows the cursor, 2 - two-finger gesture, 3 - only while the modifier and the right mouse button are held.
+fingers = 1
+
+# Holding Shift cancels the window drag (1 and 2 fingers); focus keeps following the cursor, as with Control.
+shiftCancelsDrag = true
+
+# Travel gain for the two-finger drag mode.
+sensitivity = 2.0
+
+# Enable two-finger swipes in the 1-finger drag mode.
+swipes = true
+
+# How horizontal swipes act: window - the window under the cursor, keys - the active window via Command+M/W.
+swipeMethod = window
+
+# Action for the left swipe: close or minimize.
+swipeLeftAction = minimize
+
+# Action for the right swipe: close or minimize.
+swipeRightAction = minimize
+
+# Travel in points that triggers a slow swipe.
+swipeThreshold = 50.0
+
+# Flick speed threshold. Lower - a quick swipe is caught more easily.
+swipeFlick = 18.0
+
+# Movement gain of the gesture indicator circle.
+swipeIndicatorGain = 1.8
+
+# Command + double click maximizes/restores the window.
+zoom = false
+
+# A swipe down takes the window out of native full screen if it is there (the AXFullScreen attribute).
+exitFullscreenOnSwipeDown = true
+
+# Activate the window when GOBL(in) Drag starts controlling it.
+activateOnControl = true
+
+# Activate the window under the cursor on a plain press of the chosen modifier.
+activateOnModifierPress = true
+
+# Activate the window under the cursor when the mouse moves with the activation modifier held.
+activateOnModifierHover = true
+
+# Modifier that activates a window on press or movement: command, option or control.
+activateModifier = control
+
+# Duplicate dragging a window with the cursor on Option+mouse movement.
+optionMouseDrag = true
+
+# Duplicate the horizontal swipe actions of the main modifier on Option+swipe left/right.
+optionSwipeHorizontal = true
+
+# Duplicate maximizing and restoring the window on Option+swipe up/down.
+optionSwipeVertical = true
+
+# Enable app switching with modifier+Tab without the system panel.
+appSwitcherEnabled = true
+
+# App switcher modifier: command, option or control.
+appSwitcherModifier = option
+
+# Switcher panel view: compact - visible apps of the current desktop, windows - all windows of running apps, including minimized ones.
+appSwitcherMode = compact
+
+# Enable resizing with a two-finger swipe.
+resizeEnabled = true
+
+# Resize modifier: command, option or control. Must differ from modifier.
+resizeModifier = control
+
+# Window resize speed.
+resizeGain = 2.0
+
+# Change the window width and height together during a resize gesture.
+resizeTwoAxis = false
+
+# How many seconds to remember the last resize gesture direction for a window. 0 - turn the memory off.
+resizeMemorySeconds = 5.0
+
+# Interface language: en or ru.
+language = en

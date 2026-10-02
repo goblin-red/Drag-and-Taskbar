@@ -1,0 +1,12 @@
+# собранное приложение и временные файлы сборки
+GOBL(in) Drag.app/
+.build/
+
+# личные настройки — создаются из default-config.txt при первом запуске
+config.txt
+
+# macOS
+.DS_Store
+
+# архив для GitHub Releases
+dist/
