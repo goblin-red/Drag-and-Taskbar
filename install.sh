@@ -1,10 +1,10 @@
 #!/bin/bash
 # Установка GOBL(in) Drag & Taskbar: скачивает готовую сборку из GitHub Releases.
-#   curl -fsSL https://raw.githubusercontent.com/goblin-red/two-finger-drag-macos/main/install.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/goblin-red/Drag-and-Taskbar/main/install.sh | bash
 # Свой путь установки: GOBLIN_INSTALL_DIR=~/Apps; не открывать после установки: bash -s -- --no-open
 set -euo pipefail
 
-REPO="goblin-red/two-finger-drag-macos"
+REPO="goblin-red/Drag-and-Taskbar"
 ASSET="goblin-drag-macos.zip"
 NAME="GOBL(in) Drag & Taskbar"
 URL="https://github.com/${REPO}/releases/latest/download/${ASSET}"

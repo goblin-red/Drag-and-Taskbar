@@ -1,7 +1,5 @@
 # GOBL(in) Drag & Taskbar for macOS
 
-**English** · [Русский](README.ru.md)
-
 Move, minimize and switch windows with trackpad gestures. Hold a modifier key and the window under
 the cursor follows your finger, wherever you "grab" it. No more aiming for the title bar.
 On the [GOBL(in)](https://goblin.red) website it is listed as two items, Drag and Taskbar; it is one app.
@@ -28,10 +26,10 @@ in the works and is not published yet.
 Paste this into Terminal:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/goblin-red/two-finger-drag-macos/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/goblin-red/Drag-and-Taskbar/main/install.sh | bash
 ```
 
-The script downloads the ready-made build from [Releases](https://github.com/goblin-red/two-finger-drag-macos/releases/latest),
+The script downloads the ready-made build from [Releases](https://github.com/goblin-red/Drag-and-Taskbar/releases/latest),
 puts it into `/Applications/GOBL(in) Drag & Taskbar` and opens it. The build is universal: it runs on Apple Silicon and on Intel Macs,
 and no Xcode tools are needed. Then allow the app once, see [Permission](#permission). Your `config.txt` is kept between updates. To update, run the same command again.
 
@@ -45,8 +43,8 @@ xattr -dr com.apple.quarantine "/path/to/GOBL(in) Drag & Taskbar"
 ## Build from source
 
 ```sh
-git clone https://github.com/goblin-red/two-finger-drag-macos.git
-cd two-finger-drag-macos
+git clone https://github.com/goblin-red/Drag-and-Taskbar.git
+cd Drag-and-Taskbar
 
 ./create-cert.sh        # once: a local signing certificate, so the permission survives rebuilds
 ./build.sh              # universal: Apple Silicon + Intel (default)
@@ -84,8 +82,6 @@ Open the menu bar icon → **Settings…**. Every option is also stored in a pla
 next to the app, with a comment for each line. It is created with the default values on the first run;
 `default-config.txt` keeps a copy of those defaults.
 
-The interface is in English and Russian: English by default, switch it in **Settings → Drag → Language**.
-
 ## Project
 
 | Path | Purpose |
@@ -99,8 +95,8 @@ The interface is in English and Russian: English by default, switch it in **Sett
 | `install.sh` | installs the ready-made build from Releases |
 | `package.sh` | packs the build for Releases: `dist/goblin-drag-macos.zip` |
 | `logo.svg`, `AppIcon.icns` | the Goblin logo for the menu and the app icon |
-| `AGENTS.md` | full technical documentation and critical rules (in Russian) |
-| `CHANGELOG.md` | change history (in Russian) |
+| `AGENTS.md` | full technical documentation and critical rules |
+| `CHANGELOG.md` | change history |
 
 ## License
 
