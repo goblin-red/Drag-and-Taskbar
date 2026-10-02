@@ -146,7 +146,7 @@ open "GOBL(in) Drag.app"
 ├── GOBL(in) Drag.app          # собранный бандл (артефакт)
 └── Sources/TwoFingerDrag/
     ├── App.swift              # точка входа: AppDelegate + сцены
-    ├── BuildInfo.swift        # ГЕНЕРИРУЕТСЯ build.sh (дата сборки) — не редактировать
+    ├── BuildInfo.swift        # ГЕНЕРИРУЕТСЯ build.sh (дата сборки) — не редактировать, в git не хранится
     ├── DragController.swift   # event tap + диспетчер текущих gesture-flow
     ├── AppSwitcher/           # собственная панель переключения приложений modifier+Tab
     ├── Gestures/              # чистая математика/будущие движки жестов без AX

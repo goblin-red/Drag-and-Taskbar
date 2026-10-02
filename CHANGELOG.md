@@ -17,6 +17,8 @@
 - **Установка одной командой**: `install.sh` скачивает готовую universal-сборку из GitHub Releases
   в `/Applications/GOBL(in) Drag`, сохраняя `config.txt`. `package.sh` собирает архив
   `dist/goblin-drag-macos.zip` для релиза; `dist/` добавлена в `.gitignore`.
+- `BuildInfo.swift` больше не хранится в git: `build.sh` создаёт его при каждой сборке, и раньше любая сборка
+  оставляла изменённый файл в рабочей копии.
 - Из документации и `build.sh` убраны ссылки на папку `TwoFingerDragWin/`: прототип для Windows —
   отдельный проект, в этом репозитории его нет.
 

@@ -10,3 +10,6 @@ config.txt
 
 # архив для GitHub Releases
 dist/
+
+# генерируется build.sh при каждой сборке
+Sources/TwoFingerDrag/BuildInfo.swift
